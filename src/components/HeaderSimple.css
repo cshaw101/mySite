@@ -40,7 +40,7 @@ body {
 }
 
 .logo img {
-  height: auto; /* Allow the height to adjust proportionally */
+  height: 125px; /* Allow the height to adjust proportionally */
   width: 160px; /* Set a larger width for the logo */
   max-width: 100%; /* Ensure it doesn’t overflow the container */
   max-height: 100%; /* Ensure it doesn’t overflow the header */

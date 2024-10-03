@@ -1,0 +1,85 @@
+.about-me-section {
+  padding: 80px 0;
+  background-color: #0A192F;
+  color: white;
+}
+
+.about-me-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.about-me-image {
+  flex: 1;
+  max-width: 200px; /* Reduced the max-width of the image container */
+  margin-bottom: 20px;
+}
+
+.about-me-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-content {
+  flex: 2;
+  max-width: 600px;
+  margin-left: 40px;
+}
+
+.about-me-title {
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.about-me-description {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #B0B0B0;
+}
+
+.about-me-button {
+  background-color: #00FFAB;
+  color: #0A192F;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-me-button:hover {
+  background-color: #00FF80;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-me-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-me-content {
+    margin-left: 0;
+  }
+
+  .about-me-image {
+    max-width: 150px; /* Further reduce the size of the image on small screens */
+    margin-bottom: 20px;
+  }
+
+  .about-me-title {
+    font-size: 28px;
+  }
+}

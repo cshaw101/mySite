@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Group, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import './HeaderSimple.css';
-import logo from '../images/logo.png';
+import codeBlock from '../images/codeBlock.png';
 
 const links = [
   { link: '/Home', label: 'Home' },
@@ -33,7 +33,7 @@ export function HeaderSimple() {
     <header className="header">
       <Container size="md" className="inner">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src={codeBlock} alt="logo" />
         </div>
         <Group spacing={5} className="links">
           {items}
