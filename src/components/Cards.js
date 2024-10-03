@@ -1,7 +1,7 @@
 import React from 'react';
 import { Title, Text, Card, Container, useMantineTheme, rem } from '@mantine/core';
-import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
-import './Cards.css'; // Import the CSS file
+import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react'; // Correct imports
+import './Cards.css'; 
 
 const mockdata = [
   {
@@ -57,7 +57,6 @@ export function Cards() {
         Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when hunger drives it to try biting a Steel-type Pokémon.
       </Text>
 
-      {/* Replace SimpleGrid with a Flexbox container */}
       <div className="features-grid">
         {features}
       </div>

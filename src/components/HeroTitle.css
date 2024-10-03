@@ -1,99 +1,102 @@
 .hero-wrapper {
-    position: relative;
-    padding: 180px 0 130px 0;
-    background-image: url('https://images.unsplash.com/photo-1536305030743-62144a967e9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%);
-    z-index: 0;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .hero-title {
-    font-weight: 900;
-    font-size: 48px;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-  }
-  
-  .hero-description {
-    font-size: 18px;
-    margin-bottom: 40px;
-  }
-  
-  /* Gradient Text Styling */
-  .gradient-text {
-    background: #00FFAB;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  position: relative;
+  padding: 180px 0 200px 0;
+  background: linear-gradient(135deg, #0A192F 30%, #00FFAB 100%); /* Custom gradient with green accent */
+  text-align: center;
+}
 
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65); /* Dark overlay for better text contrast */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-weight: 900;
+  font-size: 48px;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #00FFAB, #007BFF); /* Green to blue gradient for title */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #B0B0B0; /* Light gray text for the description */
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-button {
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.hero-button.primary {
+  background-color: #00FFAB;
+  color: #0A192F;
+  border-radius: 5px;
+}
+
+.hero-button.primary:hover {
+  transform: scale(1.05);
+  background-color: #00D992; /* Slightly darker green on hover */
+}
+
+.hero-button.outline {
+  background-color: transparent;
+  color: #E5E5E5;
+  border: 2px solid #00FFAB;
+  border-radius: 5px;
+}
+
+.hero-button.outline:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 255, 171, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 34px;
+    text-align: left;
   }
-  
-  .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .hero-button {
+
+  .hero-description {
     font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
+    text-align: left;
   }
-  
-  .hero-button.primary {
-    background-color: #00FFAB;
-    color: white;
-    border-radius: 5px;
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .hero-button.outline {
-    background-color: transparent;
-    color: #E5E5E5;
-    border: 2px solid white;
-    border-radius: 5px;
+
+  .hero-button {
+    width: 100%;
+    margin-top: 10px;
   }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 34px;
-      text-align: left;
-    }
-  
-    .hero-description {
-      font-size: 16px;
-      text-align: left;
-    }
-  
-    .hero-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .hero-button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
-  
+}
