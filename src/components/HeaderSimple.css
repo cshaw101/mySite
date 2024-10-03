@@ -1,0 +1,94 @@
+/* Global styles for the entire page background */
+body {
+  background-color: #000000; /* Set the background color to black */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Ensure consistent font across the site */
+  color: white; /* Set text color to white for contrast on the black background */
+}
+
+/* Header container with glassmorphism effect */
+.header {
+  height: 100px; /* Height for larger logo */
+  margin-bottom: 120px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for definition */
+  border-radius: 0; /* Removed the rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: fixed; /* Fixed at the top of the page */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  padding: 0 20px; /* Add padding to give some space around the content */
+}
+
+/* Inner container for header content */
+.inner {
+  height: 100%; /* Full height of the header */
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav links */
+  align-items: center; /* Vertically center items */
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center; /* Center logo vertically */
+}
+
+.logo img {
+  height: auto; /* Allow the height to adjust proportionally */
+  width: 160px; /* Set a larger width for the logo */
+  max-width: 100%; /* Ensure it doesn’t overflow the container */
+  max-height: 100%; /* Ensure it doesn’t overflow the header */
+  object-fit: contain; /* Make sure the image scales without distortion */
+}
+
+/* Grouping the links to display side by side */
+.links {
+  display: flex; /* Flexbox to ensure the links are side by side */
+  gap: 20px; /* Space between the links */
+}
+
+/* Navigation links styling */
+.link {
+  display: block;
+  line-height: 1;
+  padding: 8px 12px; /* Padding around links */
+  border-radius: 4px; /* Slight rounding on links */
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Ensure the link text is white on the black background */
+  font-size: 16px; /* Slightly larger font size for better readability */
+  font-weight: 500; /* Font weight for links */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Smooth background color and text color transition */
+}
+
+/* Hover effect for links */
+.link:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Light white background on hover */
+}
+
+/* Active link styling */
+.active {
+  background-color: rgba(0, 123, 255, 0.5); /* Blue background with transparency for active links */
+  color: white; /* White text for active links */
+}
+
+/* Burger menu hidden by default (only shown on smaller screens) */
+.burger {
+  display: none;
+}
+
+/* Show burger menu and hide links on smaller screens */
+@media (max-width: 768px) {
+  .burger {
+    display: block; /* Show burger menu */
+  }
+
+  .links {
+    display: none; /* Hide links on mobile */
+  }
+}
