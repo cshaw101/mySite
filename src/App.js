@@ -1,12 +1,13 @@
 import React from 'react';
 import { HeaderSimple } from './components/HeaderSimple';
+import { HeroTitle } from './components/HeroTitle';
 
 function App() {
   return (
     <div>
       <HeaderSimple />
       <main>
-        {/* Other content */}
+        <HeroTitle /> 
       </main>
     </div>
   );
