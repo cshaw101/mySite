@@ -1,6 +1,6 @@
 /* Global styles for the entire page background */
 body {
-  background-color: #000000; /* Set the background color to black */
+  background-color: #0A192F; /* Set the background color to black */
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif; /* Ensure consistent font across the site */
@@ -11,10 +11,10 @@ body {
 .header {
   height: 100px; /* Height for larger logo */
   margin-bottom: 120px;
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  background: #007BFF; /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Frosted glass effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for definition */
+  border: 1px solid rgba(36, 6, 6, 0.3); /* Subtle border for definition */
   border-radius: 0; /* Removed the rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   position: fixed; /* Fixed at the top of the page */
