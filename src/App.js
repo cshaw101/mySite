@@ -5,6 +5,7 @@ import { Cards } from './components/Cards';
 import { AboutMe } from './components/AboutMe';
 import { Pricing } from './components/Pricing';
 import { ContactUs } from './components/ContactUs';
+import { TechnologyScrollBar } from './components/TechnologyScrollBar';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <HeroTitle />
         <Cards /> 
         <AboutMe />
+        <TechnologyScrollBar /> 
         <Pricing />
         <ContactUs />
       </main>

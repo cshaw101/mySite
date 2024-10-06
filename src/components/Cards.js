@@ -8,7 +8,7 @@ const mockdata = [
   {
     title: 'Peak Performance',
     description:
-      'Our software is optimized for speed, efficiency, and scalability. We create solutions that help your business operate at its highest potential.',
+      'Our software is optimized for speed, efficiency, and scalability. We create websites that help your business operate at its highest potential.',
     icon: IconGauge,
   },
   {
@@ -51,7 +51,7 @@ export function Cards() {
       <Title order={2} className="title" ta="center" mt="sm">
       <SectionHeader
   title="Tailored Solutions Built Around Your Vision"
-  description="I specialize in creating custom solutions that align perfectly with your goals."
+  description="I specialize in creating custom websites that align perfectly with your goals."
 />
       </Title>
       <div className="features-grid">
