@@ -17,7 +17,7 @@ const mockdata = [
     icon: IconUser,
   },
   {
-    title: 'Tailored Solutions with Trusted Technology',
+    title: 'Tailored Solutions',
     description:
       'We combine custom development with trusted third-party integrations to deliver the best possible solution for your business. Our approach ensures you get tailored functionality, while leveraging the power of reliable tools and platforms.',
     icon: IconCookie,
