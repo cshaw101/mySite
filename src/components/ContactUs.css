@@ -1,0 +1,111 @@
+.contact-form-container {
+    padding: 60px 40px;
+    background-color: #0A192F;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #00FFAB;
+  }
+  
+  .contact-input,
+  .contact-textarea {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .contact-input input,
+  .contact-textarea textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact-input input::placeholder,
+  .contact-textarea textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .contact-textarea textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  .contact-button {
+    background-color: #00FFAB;
+    color: #0A192F;
+    font-weight: 600;
+    padding: 12px 24px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #00D8FF;
+    transform: translateY(-2px);
+  }
+  
+  .contact-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Notification bubble styling */
+  .notification-bubble {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #00FFAB;
+    z-index: 1000;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.95;
+    transition: opacity 0.5s ease;
+  }
+  
+  /* Error bubble style */
+  .notification-bubble.error {
+    background-color: #FF5C5C;
+  }
+  
+  /* Success bubble style */
+  .notification-bubble.success {
+    background-color: #00FFAB;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .contact-form-container {
+      padding: 40px 20px;
+      max-width: 90%;
+    }
+  
+    .contact-title {
+      font-size: 28px;
+    }
+  
+    .notification-bubble {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
