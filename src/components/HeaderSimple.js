@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Container, Group, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { Link } from 'react-scroll';
 import './HeaderSimple.css';
 import codeBlock from '../images/codeBlock.png';
 
 const links = [
-  { link: '/Home', label: 'Home' },
-  { link: '/About', label: 'About Me' },
-  { link: '/Pricing', label: 'Pricing' },
-  { link: '/Contact', label: 'Contact' },
+  { link: 'hero-title-section', label: 'Home' },
+  { link: 'about-me-section', label: 'About Me' },
+  { link: 'pricing-section', label: 'Pricing' },
+  { link: 'contact-form-section', label: 'Contact' },
 ];
 
 export function HeaderSimple() {
@@ -16,17 +17,16 @@ export function HeaderSimple() {
   const [active, setActive] = useState(links[0].link);
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
-      href={link.link}
+      to={link.link}
+      smooth={true}
+      duration={500}
       className={`link ${active === link.link ? 'active' : ''}`}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-      }}
+      onClick={() => setActive(link.link)}
     >
       {link.label}
-    </a>
+    </Link>
   ));
 
   return (

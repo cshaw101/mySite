@@ -1,5 +1,6 @@
 import React from 'react';
 import './HeroTitle.css'; // Import the CSS file
+import { Link } from 'react-scroll';
 
 export function HeroTitle() {
   return (
@@ -13,8 +14,9 @@ export function HeroTitle() {
           Empower your business with tailored software designed to streamline operations, improve efficiency, and drive growth. Whether you need a website, mobile app, or automation solution, we provide flexible, scalable services to meet your needs.
         </p>
         <div className="hero-buttons">
-          <button className="hero-button primary">Get started</button>
-          <button className="hero-button outline">Source code</button>
+          <Link to="pricing-section" smooth={true} duration={500}>
+            <button className="hero-button primary">Get started</button>
+          </Link>
         </div>
       </div>
     </div>

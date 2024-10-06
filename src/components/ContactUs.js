@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Container, TextInput, Textarea, Button, Title } from '@mantine/core';
 import './ContactUs.css';
 
 export function ContactUs() {
   const form = useRef();
+  const [notification, setNotification] = useState({ message: '', type: '', visible: false });
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,12 +19,22 @@ export function ContactUs() {
       )
       .then((result) => {
         console.log('Message sent:', result.text);
-        alert("Your message has been sent successfully!");
+        form.current.reset(); // Clear the form after successful submission
+        showNotification('Your message has been sent successfully!', 'success');
       })
       .catch((error) => {
         console.log('Message failed:', error.text);
-        alert("Failed to send message. Please try again later.");
+        showNotification('Failed to send message. Please try again later.', 'error');
       });
+  };
+
+  const showNotification = (message, type) => {
+    setNotification({ message, type, visible: true });
+
+    // Hide the notification after 3 seconds
+    setTimeout(() => {
+      setNotification((prev) => ({ ...prev, visible: false }));
+    }, 3000);
   };
 
   return (
@@ -56,6 +67,13 @@ export function ContactUs() {
           <Button type="submit" className="contact-button">Send Message</Button>
         </form>
       </Container>
+
+      {/* Custom Notification Bubble */}
+      <div
+        className={`notification-bubble ${notification.type} ${notification.visible ? 'visible' : ''}`}
+      >
+        {notification.message}
+      </div>
     </section>
   );
 }
