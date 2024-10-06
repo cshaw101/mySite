@@ -1,25 +1,26 @@
 import React from 'react';
 import { Title, Text, Card, Container, useMantineTheme, rem } from '@mantine/core';
+import { SectionHeader } from './SectionHeader';
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react'; // Correct imports
 import './Cards.css'; 
 
 const mockdata = [
   {
-    title: 'Built for Peak Performance',
+    title: 'Peak Performance',
     description:
-      'Our software is optimized for speed, efficiency, and scalability. From fast-loading websites to powerful applications, we create solutions that help your business run at its highest potential, no matter the demands.',
+      'Our software is optimized for speed, efficiency, and scalability. We create solutions that help your business operate at its highest potential.',
     icon: IconGauge,
   },
   {
-    title: 'Privacy and Security First',
+    title: 'Privacy & Security',
     description:
-      'We implement best-in-class security measures to ensure your business data stays private and protected. By integrating secure third-party tools and maintaining a privacy-focused approach, we safeguard your information every step of the way.',
+      'With best-in-class security measures, we ensure your business data remains private and protected every step of the way.',
     icon: IconUser,
   },
   {
     title: 'Tailored Solutions',
     description:
-      'We combine custom development with trusted third-party integrations to deliver the best possible solution for your business. Our approach ensures you get tailored functionality, while leveraging the power of reliable tools and platforms.',
+      'Custom development paired with trusted third-party integrations ensures tailored functionality for your business’s needs.',
     icon: IconCookie,
   },
 ];
@@ -31,16 +32,14 @@ export function Cards() {
     <Card key={feature.title} shadow="md" radius="md" padding="xl" className="features-card" withBorder>
       <div className="card-content">
         <feature.icon
-          style={{ width: rem(50), height: rem(50), marginBottom: '20px' }}
+          style={{ width: rem(60), height: rem(60), marginBottom: '20px' }} // Increased icon size for emphasis
           stroke={2}
-          color={theme.colors.blue[6]}
+          color={theme.colors.teal[4]} // Update icon color to match theme
         />
-
-        <Text fz="lg" fw={500} className="card-title" mt="md">
+        <Text fz="lg" fw={700} className="card-title" mt="md" color="#FFFFFF"> {/* Update title styling */}
           {feature.title}
         </Text>
-
-        <Text fz="sm" className="card-description" c="dimmed" mt="sm">
+        <Text fz="sm" className="card-description" color="#B0B0B0" mt="sm"> {/* Update description color */}
           {feature.description}
         </Text>
       </div>
@@ -50,13 +49,11 @@ export function Cards() {
   return (
     <Container size="lg" py="xl">
       <Title order={2} className="title" ta="center" mt="sm">
-        Integrate effortlessly with any technology stack
+      <SectionHeader
+  title="Tailored Solutions Built Around Your Vision"
+  description="I specialize in creating custom solutions that align perfectly with your goals."
+/>
       </Title>
-
-      <Text className="description" ta="center" mt="md">
-        Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when hunger drives it to try biting a Steel-type Pokémon.
-      </Text>
-
       <div className="features-grid">
         {features}
       </div>

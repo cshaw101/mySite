@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Pricing.css'; // Import the CSS file
+import { SectionHeader } from './SectionHeader';
+import './Pricing.css'; 
 
 export function Pricing() {
   const [expanded, setExpanded] = useState(null); // Track which card is expanded
@@ -50,7 +51,8 @@ export function Pricing() {
   return (
     <section className="pricing-section">
       <div className="pricing-container">
-        <h2 className="pricing-title">Pricing</h2>
+      <SectionHeader
+  title="Pricing"/>
         <div className="pricing-grid">
           {pricingData.map((item, index) => (
             <div 
