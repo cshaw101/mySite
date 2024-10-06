@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Group, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Link } from 'react-scroll';
+import { Link, Events, scroller } from 'react-scroll';
 import './HeaderSimple.css';
 import codeBlock from '../images/codeBlock.png';
 
@@ -14,7 +14,29 @@ const links = [
 
 export function HeaderSimple() {
   const [opened, { toggle }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
+  const [activeSection, setActiveSection] = useState(links[0].link);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setActiveSection('hero-title-section'); // Set to "Home" when scrolled to the top
+      }
+    };
+
+    // Register scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Register event listeners for react-scroll events
+    Events.scrollEvent.register('begin', () => {});
+    Events.scrollEvent.register('end', () => {});
+
+    return () => {
+      // Unregister event listeners when component is unmounted
+      window.removeEventListener('scroll', handleScroll);
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []);
 
   const items = links.map((link) => (
     <Link
@@ -22,8 +44,10 @@ export function HeaderSimple() {
       to={link.link}
       smooth={true}
       duration={500}
-      className={`link ${active === link.link ? 'active' : ''}`}
-      onClick={() => setActive(link.link)}
+      spy={true}
+      offset={-100} // Adjust to accommodate the header height
+      className={`link ${activeSection === link.link ? 'active' : ''}`}
+      onSetActive={() => setActiveSection(link.link)}
     >
       {link.label}
     </Link>
@@ -32,7 +56,7 @@ export function HeaderSimple() {
   return (
     <header className="header">
       <Container size="md" className="inner">
-        <div className="logo">
+        <div className="logo" onClick={() => scroller.scrollTo('hero-title-section', { smooth: true, duration: 500 })}>
           <img src={codeBlock} alt="logo" />
           Shaw Development
         </div>

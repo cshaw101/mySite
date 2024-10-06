@@ -1,10 +1,9 @@
 import React from 'react';
 import './HeroTitle.css'; // Import the CSS file
-import { Link } from 'react-scroll';
 
 export function HeroTitle() {
   return (
-    <div className="hero-wrapper">
+    <section id="hero-title-section" className="hero-wrapper">
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1 className="hero-title">
@@ -14,11 +13,9 @@ export function HeroTitle() {
           Empower your business with tailored software designed to streamline operations, improve efficiency, and drive growth. Whether you need a website, mobile app, or automation solution, we provide flexible, scalable services to meet your needs.
         </p>
         <div className="hero-buttons">
-          <Link to="pricing-section" smooth={true} duration={500}>
-            <button className="hero-button primary">Get started</button>
-          </Link>
+          <button className="hero-button primary">Get started</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
