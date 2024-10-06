@@ -34,6 +34,7 @@ export function HeaderSimple() {
       <Container size="md" className="inner">
         <div className="logo">
           <img src={codeBlock} alt="logo" />
+          Shaw Development
         </div>
         <Group spacing={5} className="links">
           {items}
