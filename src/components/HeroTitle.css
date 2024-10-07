@@ -1,7 +1,21 @@
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .hero-wrapper {
   position: relative;
   padding: 180px 0 200px 0;
-  background: linear-gradient(180deg, #0B192E 0%, #007BFF 225%); /* Gradient starting from #007BFF to #0B192E */
+  background: linear-gradient(90deg, #00FFAB, #007BFF, #00D8FF);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite; /* Smooth gradient movement */
   text-align: center;
 }
 
@@ -39,6 +53,7 @@
   margin-bottom: 40px;
   color: #B0B0B0; /* Light gray text for the description */
 }
+
 
 .hero-buttons {
   display: flex;
