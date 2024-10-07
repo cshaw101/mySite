@@ -1,50 +1,38 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './TechnologyScrollBar.css';
 
+// Import the logos from the images folder
+import reactLogo from '../images/react.svg';
+import nodeLogo from '../images/nodedotjs.svg';
+import expressLogo from '../images/express.svg';
+import mongoLogo from '../images/mongodb.svg';
+import jsLogo from '../images/javascript.svg';
+import reduxLogo from '../images/redux.svg';
+import nextLogo from '../images/nextdotjs.svg';
+import htmlCssLogo from '../images/html5.svg';
+import graphqlLogo from '../images/graphql.svg';
+
 export function TechnologyScrollBar() {
-  const scrollContainerRef = useRef(null);
-
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-
-    let scrollAmount = 0;
-    const speed = 2; // Speed of scrolling
-
-    const scroll = () => {
-      scrollAmount += speed;
-      if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-        scrollAmount = 0; // Reset scroll to loop continuously
-      }
-      scrollContainer.scrollLeft = scrollAmount;
-    };
-
-    const interval = setInterval(scroll, 20); // Adjust interval for smoothness
-
-    return () => clearInterval(interval);
-  }, []);
+  const logos = [
+    { src: reactLogo, alt: 'React Logo' },
+    { src: nodeLogo, alt: 'Node.js Logo' },
+    { src: expressLogo, alt: 'Express Logo' },
+    { src: mongoLogo, alt: 'MongoDB Logo' },
+    { src: jsLogo, alt: 'JavaScript Logo' },
+    { src: reduxLogo, alt: 'Redux Logo' },
+    { src: nextLogo, alt: 'Next.js Logo' },
+    { src: htmlCssLogo, alt: 'HTML & CSS Logo' },
+    { src: graphqlLogo, alt: 'GraphQL Logo' }
+  ];
 
   return (
     <div className="scroll-bar-container">
-      <div className="scroll-bar-content" ref={scrollContainerRef}>
-        <div className="scroll-item">React</div>
-        <div className="scroll-item">Node.js</div>
-        <div className="scroll-item">Express</div>
-        <div className="scroll-item">MongoDB</div>
-        <div className="scroll-item">JavaScript</div>
-        <div className="scroll-item">Redux</div>
-        <div className="scroll-item">Next.js</div>
-        <div className="scroll-item">HTML & CSS</div>
-        <div className="scroll-item">GraphQL</div>
-        {/* Repeat for a looping effect */}
-        <div className="scroll-item">React</div>
-        <div className="scroll-item">Node.js</div>
-        <div className="scroll-item">Express</div>
-        <div className="scroll-item">MongoDB</div>
-        <div className="scroll-item">JavaScript</div>
-        <div className="scroll-item">Redux</div>
-        <div className="scroll-item">Next.js</div>
-        <div className="scroll-item">HTML & CSS</div>
-        <div className="scroll-item">GraphQL</div>
+      <div className="scroll-bar-content">
+        {logos.concat(logos).map((logo, index) => (
+          <div className="scroll-item" key={index}>
+            <img src={logo.src} alt={logo.alt} className="tech-logo" />
+          </div>
+        ))}
       </div>
     </div>
   );

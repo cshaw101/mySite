@@ -1,44 +1,44 @@
 .scroll-bar-container {
-    width: 100%;
-    overflow: hidden; /* Hide the overflow */
-    background-color: #0A192F; /* Same background as the page for blending */
-    padding: 20px 0; /* Adjust padding as needed for spacing */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; /* Needed for containing the moving elements */
+  width: 100%;
+  overflow: hidden; /* Hide the overflow */
+  background-color: #0A192F; /* Same background as the page for blending */
+  padding: 20px 0; /* Adjust padding as needed for spacing */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Needed for containing the moving elements */
+}
+
+.scroll-bar-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 40s linear infinite; /* Adjusted duration for faster scrolling */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .scroll-bar-content {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: scroll 20s linear infinite; /* Apply the scroll animation */
+  100% {
+    transform: translateX(-50%);
   }
-  
-  /* Define the scroll animation */
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
-  .scroll-item {
-    display: inline-block;
-    padding: 10px 30px;
-    margin: 0 10px;
-    background: linear-gradient(90deg, #00FFAB, #00D8FF);
-    color: #0A192F;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .scroll-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
-  }
-  
+}
+
+.scroll-item {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 0 10px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 24px rgba(0, 255, 171, 0.8); /* Updated glow effect with green color */
+}
+
+.tech-logo {
+  height: 60px; /* Adjust size as needed */
+  width: auto;
+  filter: drop-shadow(0 0 5px #00FFAB); /* Add a green glow to logos */
+}

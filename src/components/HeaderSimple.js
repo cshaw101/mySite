@@ -58,7 +58,7 @@ export function HeaderSimple() {
       <Container size="md" className="inner">
         <div className="logo" onClick={() => scroller.scrollTo('hero-title-section', { smooth: true, duration: 500 })}>
           <img src={codeBlock} alt="logo" />
-          Shaw Development
+          Caleb Develops
         </div>
         <Group spacing={5} className="links">
           {items}
