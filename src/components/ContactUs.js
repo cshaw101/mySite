@@ -3,13 +3,14 @@ import emailjs from 'emailjs-com';
 import { Container, TextInput, Textarea, Button, Title } from '@mantine/core';
 import './ContactUs.css';
 
-export function ContactUs({ preFilledMessage }) {  // Accept a preFilledMessage as prop
+export function ContactUs({ preFilledMessage }) {
   const form = useRef();
-  const [message, setMessage] = useState(preFilledMessage || ''); // Default to pre-filled message or empty string
+  const [message, setMessage] = useState(preFilledMessage || '');
   const [notification, setNotification] = useState({ message: '', type: '', visible: false });
 
   // Update the message whenever preFilledMessage changes
   useEffect(() => {
+    console.log("preFilledMessage updated:", preFilledMessage); // Debug log
     setMessage(preFilledMessage);
   }, [preFilledMessage]);
 

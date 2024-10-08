@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { SectionHeader } from './SectionHeader';
 import './Pricing.css';
 
-export function Pricing({ setPreFilledMessage, scrollToContactForm }) {  // Added scrollToContactForm as a prop
-  const [expanded, setExpanded] = useState(null); // Track which card is expanded
+export function Pricing({ setPreFilledMessage, scrollToContactForm }) {
+  const [expanded, setExpanded] = useState(null);
 
   const pricingData = [
     {
@@ -47,10 +47,11 @@ export function Pricing({ setPreFilledMessage, scrollToContactForm }) {  // Adde
   };
 
   const toggleExpanded = (index) => {
-    setExpanded(expanded === index ? null : index); // Toggle expand/collapse
+    setExpanded(expanded === index ? null : index);
   };
 
   const handleLearnMoreClick = (service) => {
+    console.log("Setting pre-filled message:", messageTemplates[service]); // Debug log
     setPreFilledMessage(messageTemplates[service]); // Update the message in the contact form
     scrollToContactForm(); // Scroll to contact form when "Learn More" is clicked
   };
