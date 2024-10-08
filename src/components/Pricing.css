@@ -77,6 +77,27 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divider for details */
     animation: fadeIn 0.3s ease; /* Optional fade-in animation */
   }
+  .learn-more-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00FFAB;
+    color: #0A192F;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .learn-more-button:hover {
+    background-color: #00D8FF;
+    transform: translateY(-2px);
+  }
+  
+  .learn-more-button:active {
+    transform: translateY(0);
+  }
+  
   
   @keyframes fadeIn {
     from {

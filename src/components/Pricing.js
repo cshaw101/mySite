@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SectionHeader } from './SectionHeader';
 import './Pricing.css'; 
 
-export function Pricing() {
+export function Pricing({ setPreFilledMessage }) {  // Pass the setPreFilledMessage function as a prop
   const [expanded, setExpanded] = useState(null); // Track which card is expanded
 
   const pricingData = [
@@ -38,8 +38,20 @@ export function Pricing() {
     },
   ];
 
+  const messageTemplates = {
+    'Basic Landing Page': 'I’m interested in the Basic Landing Page package, which includes up to 5 sections and a basic form. Could you provide more details about mobile optimization and timeline?',
+    'Enhanced Landing Page': 'I’m considering the Enhanced Landing Page package with form integration. Could you let me know more about the customization options and pricing?',
+    'One-Page Site with Scheduling': 'I would like to know more about the One-Page Site with Scheduling. How does the scheduling system work, and what other features are included?',
+    'Third-Party Hosting': 'I’m interested in the Third-Party Hosting option. Could you provide details on what hosting plan would be best for my business and the associated costs?',
+    'Maintenance + Hosting': 'I’m considering the Maintenance + Hosting package for ongoing support and updates. Could you provide more information on what’s included in this plan?'
+  };
+
   const toggleExpanded = (index) => {
     setExpanded(expanded === index ? null : index); // Toggle expand/collapse
+  };
+
+  const handleLearnMoreClick = (service) => {
+    setPreFilledMessage(messageTemplates[service]); // Update the message in the contact form
   };
 
   return (
@@ -59,9 +71,19 @@ export function Pricing() {
               
               {/* Conditional rendering of additional details */}
               {expanded === index && (
-                <div className="pricing-details">
-                  <p>{item.details}</p>
-                </div>
+                <>
+                  <div className="pricing-details">
+                    <p>{item.details}</p>
+                  </div>
+
+                  {/* "Learn More" button appears only when the card is expanded */}
+                  <button 
+                    className="learn-more-button" 
+                    onClick={() => handleLearnMoreClick(item.service)}
+                  >
+                    Learn More
+                  </button>
+                </>
               )}
             </div>
           ))}

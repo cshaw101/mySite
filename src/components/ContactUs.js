@@ -1,11 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { Container, TextInput, Textarea, Button, Title } from '@mantine/core';
 import './ContactUs.css';
 
-export function ContactUs() {
+export function ContactUs({ preFilledMessage }) {  // Accept a preFilledMessage as prop
   const form = useRef();
+  const [message, setMessage] = useState(preFilledMessage || ''); // Default to pre-filled message or empty string
   const [notification, setNotification] = useState({ message: '', type: '', visible: false });
+
+  // Update the message whenever preFilledMessage changes
+  useEffect(() => {
+    setMessage(preFilledMessage);
+  }, [preFilledMessage]);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -63,6 +69,8 @@ export function ContactUs() {
             placeholder="What are you looking for?"
             required
             className="contact-textarea"
+            value={message} // Controlled component for the textarea value
+            onChange={(e) => setMessage(e.target.value)} // Update state when the user types
           />
           <Button type="submit" className="contact-button">Send Message</Button>
         </form>

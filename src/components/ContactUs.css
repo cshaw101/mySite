@@ -105,6 +105,37 @@
   background: linear-gradient(90deg, #00FFAB, #00D8FF); /* Match with page's color scheme */
 }
 
+.contact-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.contact-modal button {
+  margin-top: 20px;
+  background-color: #FF5C5C;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-modal button:hover {
+  background-color: #FF3B3B;
+}
+
+
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .notification-bubble {
