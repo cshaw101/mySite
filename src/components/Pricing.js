@@ -16,7 +16,7 @@ export function Pricing() {
       service: 'Enhanced Landing Page', 
       description: 'Up to 7 sections, form integration', 
       price: '$500 - $600', 
-      details: 'Enhanced landing page includes more customization, optimized SEO, and seamless form integration.' 
+      details: 'Enhanced landing page includes more customization, and seamless form integration.' 
     },
     { 
       service: 'One-Page Site with Scheduling', 
@@ -25,23 +25,17 @@ export function Pricing() {
       details: 'Ideal for service-based businesses, this package includes integrated scheduling and contact forms.' 
     },
     { 
-      service: 'Custom One-Page Site', 
-      description: 'Interactive elements, custom API integration', 
-      price: '$1,500 - $2,500', 
-      details: 'Completely customized one-page website with advanced features like interactive elements and API integrations.' 
+      service: 'Third-Party Hosting', 
+      description: 'Hosting services provided by developer', 
+      price: '$50 - $100 Monthly', 
+      details: 'Hosting services provided by the developer to ensure smooth operation and upkeep of the site. Pricing depends on the hosting requirements.' 
     },
     { 
-      service: 'Maintenance Package', 
-      description: 'Up to 5 hours of updates/month', 
-      price: '$100 - $150/month', 
-      details: 'Monthly maintenance package for keeping your site updated and secure, including content updates.' 
+      service: 'Maintenance + Hosting', 
+      description: 'Ongoing support and issue resolution', 
+      price: '$150-250 Monthly', 
+      details: 'Ongoing maintenance services for resolving issues, updating content, and providing technical support as needed.' 
     },
-    { 
-      service: 'Additional Revisions', 
-      description: 'Revisions beyond included rounds', 
-      price: '$50/hour', 
-      details: 'Need more changes? Get additional rounds of revisions billed at an hourly rate.' 
-    }
   ];
 
   const toggleExpanded = (index) => {
@@ -51,8 +45,7 @@ export function Pricing() {
   return (
     <section className="pricing-section">
       <div className="pricing-container">
-      <SectionHeader
-  title="Pricing"/>
+        <SectionHeader title="Website Development Pricing Sheet" />
         <div className="pricing-grid">
           {pricingData.map((item, index) => (
             <div 
