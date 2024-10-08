@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 import { HeaderSimple } from './components/HeaderSimple';
 import { HeroTitle } from './components/HeroTitle';
-import { Cards } from './components/Cards'; 
+import { Cards } from './components/Cards';
 import { AboutMe } from './components/AboutMe';
 import { Pricing } from './components/Pricing';
 import { ContactUs } from './components/ContactUs';
 import { TechnologyScrollBar } from './components/TechnologyScrollBar';
+import { scroller } from 'react-scroll';
 
 function App() {
   const [preFilledMessage, setPreFilledMessage] = useState(''); // State to manage pre-filled message
+
+  // Scroll function to smoothly move to the contact form
+  const scrollToContactForm = () => {
+    scroller.scrollTo('contact-form-section', {
+      smooth: true,
+      duration: 500,
+      offset: -100, // Adjust to accommodate header height, if needed
+    });
+  };
 
   return (
     <div>
       <HeaderSimple />
       <main>
         <HeroTitle />
-        <Cards /> 
+        <Cards />
         <AboutMe />
-        <TechnologyScrollBar /> 
-        {/* Pass setPreFilledMessage to Pricing to allow it to update the message */}
-        <Pricing setPreFilledMessage={setPreFilledMessage} />
-        {/* Pass preFilledMessage to ContactUs to display the updated message */}
+        <TechnologyScrollBar />
+        <Pricing setPreFilledMessage={setPreFilledMessage} scrollToContactForm={scrollToContactForm} />
         <ContactUs preFilledMessage={preFilledMessage} />
       </main>
     </div>
