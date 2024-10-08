@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll'; // Import Link from react-scroll
 import './HeroTitle.css'; // Import the CSS file
 
 export function HeroTitle() {
@@ -13,7 +14,14 @@ export function HeroTitle() {
           Empower your business with tailored software designed to streamline operations, improve efficiency, and drive growth. Whether you need a website, mobile app, or automation solution, we provide flexible, scalable services to meet your needs.
         </p>
         <div className="hero-buttons">
-          <button className="hero-button primary">Get started</button>
+          <Link
+            to="pricing-section" // ID of the pricing section
+            smooth={true}
+            duration={500}
+            offset={-100} // Adjust to accommodate the header height if necessary
+          >
+            <button className="hero-button primary">Get started</button>
+          </Link>
         </div>
       </div>
     </section>
