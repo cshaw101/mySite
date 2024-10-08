@@ -1,122 +1,109 @@
 .pricing-section {
-    padding: 80px 0;
-    background-color: #0A192F;
-    color: white;
-  }
-  
-  .pricing-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-  
-  .pricing-title {
-    font-size: 34px;
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 50px;
-    color: #FFFFFF;
-  }
-  
-  .pricing-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
+  padding: 80px 0;
+  background-color: #0A192F;
+  color: white;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.pricing-title {
+  font-size: 34px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #FFFFFF;
+}
+
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pricing-card {
+  background-color: #1E293B;
+  border-radius: 10px;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Makes sure all elements are stacked vertically */
+  justify-content: space-between; /* Ensure all cards are balanced vertically */
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+.pricing-service {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #00FFAB;
+}
+
+.pricing-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #B0B0B0;
+  margin-bottom: 10px;
+}
+
+.pricing-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.pricing-details {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #B0B0B0;
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divider for details */
+  flex-grow: 1; /* Allows this section to take remaining space for consistency */
+}
+
+.learn-more-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00FFAB;
+  color: #0A192F;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #00D8FF;
+  transform: translateY(-2px);
+}
+
+.learn-more-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
   .pricing-card {
-    background-color: #1E293B;
-    border-radius: 10px;
-    padding: 30px;
-    width: 300px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, max-height 0.3s ease;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    max-height: 240px;
-    overflow: hidden;
+    width: calc(50% - 20px);
   }
-  
-  .pricing-card.expanded {
-    max-height: 400px; /* Allow more space for expanded content */
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .pricing-card {
+    width: 100%;
   }
-  
-  .pricing-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .pricing-service {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #00FFAB;
-  }
-  
-  .pricing-description {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #B0B0B0;
-    margin-bottom: 10px;
-  }
-  
-  .pricing-price {
-    font-size: 18px;
-    font-weight: 600;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-  }
-  
-  .pricing-details {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #B0B0B0;
-    line-height: 1.5;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divider for details */
-    animation: fadeIn 0.3s ease; /* Optional fade-in animation */
-  }
-  .learn-more-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #00FFAB;
-    color: #0A192F;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .learn-more-button:hover {
-    background-color: #00D8FF;
-    transform: translateY(-2px);
-  }
-  
-  .learn-more-button:active {
-    transform: translateY(0);
-  }
-  
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @media (max-width: 1024px) {
-    .pricing-card {
-      width: calc(50% - 20px);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .pricing-card {
-      width: 100%;
-    }
-  }
-  
+}

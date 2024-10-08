@@ -7,6 +7,7 @@ export function ContactUs({ preFilledMessage }) {
   const form = useRef();
   const [message, setMessage] = useState(preFilledMessage || '');
   const [notification, setNotification] = useState({ message: '', type: '', visible: false });
+  const [isHoneypotChecked, setIsHoneypotChecked] = useState(false); // Honeypot state
 
   // Update the message whenever preFilledMessage changes
   useEffect(() => {
@@ -16,6 +17,12 @@ export function ContactUs({ preFilledMessage }) {
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // If honeypot is checked, stop the submission
+    if (isHoneypotChecked) {
+      showNotification('Bot detection triggered, email not sent.', 'error');
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -73,6 +80,19 @@ export function ContactUs({ preFilledMessage }) {
             value={message} // Controlled component for the textarea value
             onChange={(e) => setMessage(e.target.value)} // Update state when the user types
           />
+
+          {/* Honeypot field (hidden from users but detectable by bots) */}
+          <div style={{ display: 'none' }}>
+            <label>
+              If you are a bot, click here
+              <input
+                type="checkbox"
+                name="bot_check"
+                onChange={() => setIsHoneypotChecked(true)}
+              />
+            </label>
+          </div>
+
           <Button type="submit" className="contact-button">Send Message</Button>
         </form>
       </Container>

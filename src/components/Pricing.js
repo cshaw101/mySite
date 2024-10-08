@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SectionHeader } from './SectionHeader';
 import './Pricing.css';
 
 export function Pricing({ setPreFilledMessage, scrollToContactForm }) {
-  const [expanded, setExpanded] = useState(null);
-
   const pricingData = [
     {
       service: 'Basic Landing Page',
@@ -46,10 +44,6 @@ export function Pricing({ setPreFilledMessage, scrollToContactForm }) {
     'Maintenance + Hosting': 'I’m considering the Maintenance + Hosting package for ongoing support and updates. Could you provide more information on what’s included in this plan?'
   };
 
-  const toggleExpanded = (index) => {
-    setExpanded(expanded === index ? null : index);
-  };
-
   const handleLearnMoreClick = (service) => {
     console.log("Setting pre-filled message:", messageTemplates[service]); // Debug log
     setPreFilledMessage(messageTemplates[service]); // Update the message in the contact form
@@ -63,31 +57,23 @@ export function Pricing({ setPreFilledMessage, scrollToContactForm }) {
         <div className="pricing-grid">
           {pricingData.map((item, index) => (
             <div
-              className={`pricing-card ${expanded === index ? 'expanded' : ''}`}
+              className="pricing-card"
               key={index}
-              onClick={() => toggleExpanded(index)}
             >
               <h3 className="pricing-service">{item.service}</h3>
               <p className="pricing-description">{item.description}</p>
               <p className="pricing-price">{item.price}</p>
 
-              {expanded === index && (
-                <>
-                  <div className="pricing-details">
-                    <p>{item.details}</p>
-                  </div>
+              <div className="pricing-details">
+                <p>{item.details}</p>
+              </div>
 
-                  <button
-                    className="learn-more-button"
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent card from collapsing when clicking the button
-                      handleLearnMoreClick(item.service);
-                    }}
-                  >
-                    Learn More
-                  </button>
-                </>
-              )}
+              <button
+                className="learn-more-button"
+                onClick={() => handleLearnMoreClick(item.service)}
+              >
+                Learn More
+              </button>
             </div>
           ))}
         </div>
