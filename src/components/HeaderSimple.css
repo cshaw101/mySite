@@ -99,11 +99,17 @@ body {
 /* Show burger menu and hide links on smaller screens */
 @media (max-width: 768px) {
   .burger {
-    display: block;
+    display: none;
   }
 
   .links {
     display: none; /* Hide all nav links except the logo */
+  }
+  .hero {
+    min-height: 100vh; /* Make the hero section fill the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Keep content vertically centered */
   }
   
   .logo {
