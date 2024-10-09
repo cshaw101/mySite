@@ -67,6 +67,57 @@
 .contact-button:active {
   transform: translateY(0);
 }
+/* Notification Bubble Styles */
+.notification-bubble {
+  position: fixed;
+  bottom: 20px; /* Move it to the bottom of the screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000; /* Make sure it's above other elements */
+}
+
+.notification-bubble.visible {
+  opacity: 1;
+  visibility: visible;
+  animation: slideIn 0.5s ease, fadeOut 3s ease 2.5s forwards;
+}
+
+.notification-bubble.success {
+  background-color: #4BB543;
+}
+
+.notification-bubble.error {
+  background-color: #E74C3C;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50%) translateY(50px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
