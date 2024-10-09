@@ -103,6 +103,16 @@ body {
   }
 
   .links {
-    display: none;
+    display: none; /* Hide all nav links except the logo */
   }
-}
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00FFAB, #00D8FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}  

@@ -1,5 +1,5 @@
 .contact-form-section {
-  padding-top: 120px; /* Increase the padding above the contact form */
+  padding-top: 120px;
 }
 
 .contact-form-container {
@@ -20,128 +20,65 @@
   color: #00FFAB;
 }
 
-  
-  .contact-input,
-  .contact-textarea {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  
-  .contact-input input,
-  .contact-textarea textarea {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .contact-input input::placeholder,
-  .contact-textarea textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .contact-textarea textarea {
-    min-height: 150px;
-    resize: vertical;
-  }
-  
-  .contact-button {
-    background-color: #00FFAB;
-    color: #0A192F;
-    font-weight: 600;
-    padding: 12px 24px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .contact-button:hover {
-    background-color: #00D8FF;
-    transform: translateY(-2px);
-  }
-  
-  .contact-button:active {
-    transform: translateY(0);
-  }
-  
-/* Notification bubble styling with improved aesthetics */
-.notification-bubble {
-  position: fixed;
-  bottom: 20px; /* Position at the bottom */
-  left: 20px; /* Align to the left */
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #0A192F; /* Contrast color for readability */
-  background: linear-gradient(90deg, #00FFAB, #00D8FF); /* Gradient to match theme */
-  z-index: 1000;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  opacity: 0; /* Initially hidden for animation */
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  font-family: 'Poppins', sans-serif;
+.contact-input,
+.contact-textarea {
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-/* Slide-in effect when notification is visible */
-.notification-bubble.visible {
-  opacity: 0.95; /* Make visible */
-  transform: translateY(0); /* Slide in */
-}
-
-/* Error bubble style */
-.notification-bubble.error {
-  background: linear-gradient(90deg, #FF5C5C, #FF6A6A); /* Gradient for error */
-  color: #FFFFFF; /* White text for better contrast */
-}
-
-/* Success bubble style */
-.notification-bubble.success {
-  background: linear-gradient(90deg, #00FFAB, #00D8FF); /* Match with page's color scheme */
-}
-
-.contact-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 1000;
-  width: 500px;
-  max-width: 90%;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.contact-modal button {
-  margin-top: 20px;
-  background-color: #FF5C5C;
-  color: white;
-  padding: 10px;
+.contact-input input,
+.contact-textarea textarea {
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-input input::placeholder,
+.contact-textarea textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-textarea textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-button {
+  background-color: #00FFAB;
+  color: #0A192F;
+  font-weight: 600;
+  padding: 12px 24px;
+  width: 100%;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.contact-modal button:hover {
-  background-color: #FF3B3B;
+.contact-button:hover {
+  background-color: #00D8FF;
+  transform: translateY(-2px);
 }
 
+.contact-button:active {
+  transform: translateY(0);
+}
 
-
-
-/* Responsive adjustments */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-  .notification-bubble {
-    font-size: 14px;
-    padding: 10px 20px;
-    left: 10px; /* Adjust left positioning on smaller screens */
-    bottom: 10px; /* Adjust bottom positioning on smaller screens */
+  .contact-form-container {
+    padding: 40px 20px;
+  }
+
+  .contact-title {
+    font-size: 28px;
+  }
+
+  .contact-button {
+    width: auto;
   }
 }

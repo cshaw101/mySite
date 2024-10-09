@@ -9,8 +9,8 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  margin-left: -115px; /* Slightly decrease the margin to move it left a bit */
-  font-family: 'Poppins', sans-serif; /* Set font family */
+  margin: 0 auto; /* Removed negative margin to ensure centering */
+  font-family: 'Poppins', sans-serif;
 }
 
 .about-me-container {
@@ -19,18 +19,17 @@
   align-items: center;
   justify-content: center;
   max-width: 1200px;
-  width: 100%; /* Set to 100% to ensure proper centering within the section */
+  width: 100%;
   margin: 0 auto;
-  padding: 0 30px; /* Reduce the padding slightly for better horizontal alignment */
+  padding: 0 30px;
 }
-
 
 .about-me-image {
   flex: 1;
   max-width: 200px;
   margin-bottom: 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-me-image img {
@@ -38,12 +37,12 @@
   height: auto;
   border-radius: 50%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-me-image img:hover {
-  transform: scale(1.05); /* Slightly enlarge the image on hover */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Add a more prominent shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .about-me-content {
@@ -53,26 +52,23 @@
   margin-left: 0;
 }
 
-/* Updated About Me Title Styling */
 .about-me-title {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
   color: #FFFFFF;
   text-align: center;
-  font-family: 'Poppins', sans-serif; /* Set the new font */
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Updated About Me Description Styling */
 .about-me-description {
   font-size: 18px;
   line-height: 1.8;
   margin-bottom: 20px;
   color: #B0B0B0;
-  font-weight: 400; /* Use a lighter weight for body text */
+  font-weight: 400;
 }
 
-/* Button Styling (Green Color) */
 .about-me-button {
   background-color: #00FFAB;
   color: #0A192F;
@@ -85,27 +81,31 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
   display: inline-block;
   margin: 20px 0;
-  font-family: 'Poppins', sans-serif; /* Set the new font */
+  font-family: 'Poppins', sans-serif;
 }
 
 .about-me-button:hover {
-  background-color: #00FF80; /* Slight color change for hover effect */
+  background-color: #00FF80;
   transform: translateY(-3px);
 }
 
-/* Responsive Design */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-  .about-me-container {
-    flex-direction: column;
-    text-align: center;
-    margin-left: 0;
+  @media (max-width: 768px) {
+    .about-me-container {
+      flex-direction: column;
+      text-align: center;
+      align-items: center; /* Center content on mobile */
+      margin: 0 auto; /* Ensure container is centered */
+    }
+  
+    .about-me-content {
+      margin: 0 auto;
+      max-width: 100%;
+      text-align: center;
+    }
   }
-
-  .about-me-content {
-    margin-left: 0;
-    max-width: 100%;
-    text-align: center;
-  }
+  
 
   .about-me-image {
     max-width: 150px;
@@ -113,6 +113,6 @@
   }
 
   .about-me-title {
-    font-size: 28px; /* Reduce font size for smaller screens */
+    font-size: 28px;
   }
 }
