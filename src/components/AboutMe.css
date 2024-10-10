@@ -1,3 +1,4 @@
+/* About Me Section CSS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .about-me-section {
@@ -9,7 +10,7 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  margin: 0 auto; /* Removed negative margin to ensure centering */
+  margin: 0 auto;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -89,23 +90,27 @@
   transform: translateY(-3px);
 }
 
+/* Desktop Adjustments: Nudge the About Me section to the left */
+@media (min-width: 769px) {
+  .about-me-section {
+    margin-left: -80px; /* Adjust this value as needed */
+  }
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-  @media (max-width: 768px) {
-    .about-me-container {
-      flex-direction: column;
-      text-align: center;
-      align-items: center; /* Center content on mobile */
-      margin: 0 auto; /* Ensure container is centered */
-    }
-  
-    .about-me-content {
-      margin: 0 auto;
-      max-width: 100%;
-      text-align: center;
-    }
+  .about-me-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
   }
-  
+
+  .about-me-content {
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+  }
 
   .about-me-image {
     max-width: 150px;
