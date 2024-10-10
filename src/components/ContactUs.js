@@ -5,6 +5,8 @@ import './ContactUs.css';
 
 export function ContactUs({ preFilledMessage }) {
   const form = useRef();
+  const [name, setName] = useState(''); // State for name input
+  const [email, setEmail] = useState(''); // State for email input
   const [message, setMessage] = useState(preFilledMessage || '');
   const [notification, setNotification] = useState({ message: '', type: '', visible: false });
   const [isHoneypotChecked, setIsHoneypotChecked] = useState(false);
@@ -33,7 +35,11 @@ export function ContactUs({ preFilledMessage }) {
       )
       .then((result) => {
         console.log('Message sent:', result.text);
-        form.current.reset();
+        // Reset the input states after successful submission
+        setName(''); // Clear the name field
+        setEmail(''); // Clear the email field
+        setMessage(''); // Clear the message field
+        form.current.reset(); // Clear form for non-controlled components if needed
         showNotification('Your message has been sent successfully!', 'success');
       })
       .catch((error) => {
@@ -57,13 +63,17 @@ export function ContactUs({ preFilledMessage }) {
       <Container size="sm" className="contact-form-container">
         <Title order={2} className="contact-title">Contact Us</Title>
         <form ref={form} onSubmit={sendEmail}>
+          {/* Controlled input for name */}
           <TextInput
             label="Name"
             name="user_name"
             placeholder="Enter your name"
             required
             className="contact-input"
+            value={name} // Controlled input
+            onChange={(e) => setName(e.target.value)} // Update state
           />
+          {/* Controlled input for email */}
           <TextInput
             label="Email"
             name="user_email"
@@ -71,15 +81,18 @@ export function ContactUs({ preFilledMessage }) {
             placeholder="Enter your email"
             required
             className="contact-input"
+            value={email} // Controlled input
+            onChange={(e) => setEmail(e.target.value)} // Update state
           />
+          {/* Controlled textarea for message */}
           <Textarea
             label="Message"
             name="message"
             placeholder="What are you looking for?"
             required
             className="contact-textarea"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            value={message} // Controlled component for the textarea value
+            onChange={(e) => setMessage(e.target.value)} // Update state when the user types
           />
 
           <div style={{ display: 'none' }}>
