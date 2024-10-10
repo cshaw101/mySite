@@ -7,45 +7,46 @@ export function ContactUs({ preFilledMessage }) {
   const form = useRef();
   const [message, setMessage] = useState(preFilledMessage || '');
   const [notification, setNotification] = useState({ message: '', type: '', visible: false });
-  const [isHoneypotChecked, setIsHoneypotChecked] = useState(false); // Honeypot state
+  const [isHoneypotChecked, setIsHoneypotChecked] = useState(false);
+  const [isSending, setIsSending] = useState(false); // State to track loading
 
-  // Update the message whenever preFilledMessage changes
   useEffect(() => {
-    console.log("preFilledMessage updated:", preFilledMessage); // Debug log
     setMessage(preFilledMessage);
   }, [preFilledMessage]);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // If honeypot is checked, stop the submission
     if (isHoneypotChecked) {
       showNotification('Bot detection triggered, email not sent.', 'error');
       return;
     }
 
+    setIsSending(true); // Set loading state
+
     emailjs
       .sendForm(
-        'service_khcercm',  // Replace with your EmailJS service ID
-        'template_wc1xb8i',  // Replace with your EmailJS template ID
+        'service_khcercm',
+        'template_wc1xb8i',
         form.current,
-        'LiIOyhzea1vOlO5Dy'  // Replace with your EmailJS user ID (public key)
+        'LiIOyhzea1vOlO5Dy'
       )
       .then((result) => {
         console.log('Message sent:', result.text);
-        form.current.reset(); // Clear the form after successful submission
+        form.current.reset();
         showNotification('Your message has been sent successfully!', 'success');
       })
       .catch((error) => {
         console.log('Message failed:', error.text);
         showNotification('Failed to send message. Please try again later.', 'error');
+      })
+      .finally(() => {
+        setIsSending(false); // Reset loading state
       });
   };
 
   const showNotification = (message, type) => {
     setNotification({ message, type, visible: true });
-
-    // Hide the notification after 3 seconds
     setTimeout(() => {
       setNotification((prev) => ({ ...prev, visible: false }));
     }, 3000);
@@ -77,11 +78,10 @@ export function ContactUs({ preFilledMessage }) {
             placeholder="What are you looking for?"
             required
             className="contact-textarea"
-            value={message} // Controlled component for the textarea value
-            onChange={(e) => setMessage(e.target.value)} // Update state when the user types
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
 
-          {/* Honeypot field (hidden from users but detectable by bots) */}
           <div style={{ display: 'none' }}>
             <label>
               If you are a bot, click here
@@ -93,11 +93,18 @@ export function ContactUs({ preFilledMessage }) {
             </label>
           </div>
 
-          <Button type="submit" className="contact-button">Send Message</Button>
+          {/* Button with loading state */}
+          <Button type="submit" className="contact-button" disabled={isSending}>
+            {isSending ? (
+              <span className="spinner"></span>
+            ) : (
+              'Send Message'
+            )}
+          </Button>
         </form>
       </Container>
 
-      {/* Custom Notification Bubble */}
+      {/* Notification Bubble */}
       <div
         className={`notification-bubble ${notification.type} ${notification.visible ? 'visible' : ''}`}
       >
