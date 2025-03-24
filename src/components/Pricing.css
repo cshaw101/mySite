@@ -65,15 +65,44 @@
   margin-bottom: 20px;
 }
 
+.pricing-details ul {
+  list-style-type: none; /* Remove default bullet */
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.pricing-details li {
+  position: relative;
+  font-size: 16px;  /* Larger text for better readability */
+  line-height: 1.6;  /* More space between lines */
+  color: #E0E0E0;  /* Lighter gray color for text */
+  padding-left: 25px;  /* Space for custom bullet */
+  margin-bottom: 12px;  /* Add spacing between items */
+  transition: all 0.3s ease;  /* Smooth transition for hover effects */
+}
+
+.pricing-details li::before {
+  content: '•'; /* Custom bullet symbol */
+  color: #00FFAB;  /* Green bullet */
+  font-size: 20px;  /* Slightly larger bullet */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
+
+
 .pricing-details {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 14px;
-  color: #B0B0B0;
+  color: #B0B0B0;  /* Lighter color for description text */
   line-height: 1.5;
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divider for details */
   flex-grow: 1; /* Allows this section to take remaining space for consistency */
 }
+
 
 .learn-more-button {
   margin-top: 20px;

@@ -7,6 +7,7 @@ import { Pricing } from './components/Pricing';
 import { ContactUs } from './components/ContactUs';
 import { TechnologyScrollBar } from './components/TechnologyScrollBar';
 import { scroller } from 'react-scroll';
+import { Footer } from './components/Footer';
 
 function App() {
   const [preFilledMessage, setPreFilledMessage] = useState(''); // State to manage pre-filled message
@@ -31,6 +32,7 @@ function App() {
         <Pricing setPreFilledMessage={setPreFilledMessage} scrollToContactForm={scrollToContactForm} />
         <ContactUs preFilledMessage={preFilledMessage} />
       </main>
+      <Footer/>
     </div>
   );
 }
