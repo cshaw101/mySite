@@ -8,6 +8,7 @@ import { ContactUs } from './components/ContactUs';
 import { TechnologyScrollBar } from './components/TechnologyScrollBar';
 import { scroller } from 'react-scroll';
 import { Footer } from './components/Footer';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [preFilledMessage, setPreFilledMessage] = useState(''); // State to manage pre-filled message
@@ -31,6 +32,7 @@ function App() {
         <TechnologyScrollBar />
         <Pricing setPreFilledMessage={setPreFilledMessage} scrollToContactForm={scrollToContactForm} />
         <ContactUs preFilledMessage={preFilledMessage} />
+        <Analytics />
       </main>
       <Footer/>
     </div>
