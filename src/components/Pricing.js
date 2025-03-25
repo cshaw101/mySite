@@ -54,7 +54,7 @@ export function Pricing({ setPreFilledMessage, scrollToContactForm }) {
     {
       service: 'Full-Stack E-Commerce Package',
       description: 'A fully custom e-commerce website with complete back-end integration',
-      price: '$5,000',
+      price: '$10,000',
       details: (
         <>
           <ul>
