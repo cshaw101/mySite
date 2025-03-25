@@ -32,9 +32,9 @@ function App() {
         <TechnologyScrollBar />
         <Pricing setPreFilledMessage={setPreFilledMessage} scrollToContactForm={scrollToContactForm} />
         <ContactUs preFilledMessage={preFilledMessage} />
-        <Analytics />
       </main>
       <Footer/>
+      <Analytics />
     </div>
   );
 }
